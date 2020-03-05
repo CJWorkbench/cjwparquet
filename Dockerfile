@@ -1,5 +1,5 @@
 # We run everything in a Dockerfile so we can pull arrow-tools binaries
-FROM workbenchdata/parquet-tools:v2.0.1 as parquet-tools
+FROM workbenchdata/parquet-to-arrow:v2.0.1 as parquet-tools
 
 FROM python:3.8.1-buster AS test
 
@@ -12,7 +12,6 @@ RUN pip install black pyflakes isort
 RUN mkdir -p /app/cjwparquet/ && echo "__version__ = '0.0.1'" > /app/cjwparquet/__init__.py
 # README is read by setup.py
 COPY setup.py README.md /app/
-COPY cjwparquet/__init__.py /app/cjwparquet/
 WORKDIR /app
 RUN pip install .[tests]
 

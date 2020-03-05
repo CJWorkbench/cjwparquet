@@ -27,5 +27,5 @@ setup(
     packages=find_packages(exclude=["tests", "tests.*"]),
     install_requires=["pyarrow~=0.16.0"],
     setup_requires=["pytest-runner~=5.2"] if needs_pytest else [],
-    extras_require={"tests": ["pytest~=5.3.0"]},
+    extras_require={"tests": ["pytest~=5.3.0", "pytz~=5.3.5"]},
 )
