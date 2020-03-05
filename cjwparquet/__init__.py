@@ -159,10 +159,8 @@ def open_as_mmapped_arrow(parquet_path: Path) -> ContextManager[pyarrow.Table]:
     ) as tf:
         # raise ArrowIOError
         convert_parquet_file_to_arrow_file(parquet_path, Path(tf.name))
-        reader = pyarrow.ipc.open_file(tf.name)
-        yield reader.read_all()
-        # with pyarrow.ipc.open_file(tf.name) as reader:
-        #    yield reader.read_all()
+        with pyarrow.ipc.open_file(tf.name) as reader:
+            yield reader.read_all()
 
 
 def read(parquet_path: Path) -> pyarrow.Table:
