@@ -1,0 +1,13 @@
+sudo: false
+language: python
+services:
+- docker
+python:
+- '3.8'
+script:
+- docker build .
+deploy:
+  provider: pypi
+  user: __token__
+  on:
+    tags: true
