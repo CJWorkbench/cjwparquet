@@ -66,7 +66,7 @@ features; fix bugs. Never change functionality.
 Publishing
 ==========
 
-1. Write a new `__version__` to `cjwparquet/__init__.py`. Adhere to
+1. Write a new `version=` to `setup.py`. Adhere to
    [semver](https://semver.org). (As changes must be backwards-compatible,
    the version will always start with `1` and look like `1.x.y`.)
 2. Prepend notes to `CHANGELOG.md` about the new version

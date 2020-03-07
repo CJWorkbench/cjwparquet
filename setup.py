@@ -5,8 +5,6 @@ from os.path import dirname, join
 
 from setuptools import find_packages, setup
 
-from cjwparquet import __version__
-
 # We use the README as the long_description
 readme = open(join(dirname(__file__), "README.md")).read()
 
@@ -14,7 +12,7 @@ needs_pytest = {"pytest", "test", "ptr"}.intersection(sys.argv)
 
 setup(
     name="cjwparquet",
-    version=__version__,
+    version="1.0.2",
     url="http://github.com/CJWorkbench/cjwparquet/",
     author="Adam Hooper",
     author_email="adam@adamhooper.com",

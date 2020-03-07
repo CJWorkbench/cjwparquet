@@ -1,6 +1,3 @@
-__version__ = "1.0.1"
-
-
 import contextlib
 import io
 import subprocess
