@@ -12,8 +12,8 @@ This is meant to be used within a Docker container. It depends on executables
 Your Dockerfile might look something like this:
 
 ```
-FROM workbenchdata/parquet-tools:v2.0.1 AS parquet-tools
-FROM python:3.8.1-buster AS main
+FROM workbenchdata/parquet-tools:v2.1.0 AS parquet-tools
+FROM python:3.8.5-buster AS main
 
 COPY --from=parquet-tools /usr/bin/parquet-to-arrow /usr/bin/parquet-to-arrow
 COPY --from=parquet-tools /usr/bin/parquet-to-text-stream /usr/bin/parquet-to-text-stream
@@ -55,7 +55,7 @@ Developing
 1. Run tests: `docker build .`
 2. Write a failing unit test in `tests/`
 3. Make it pass by editing code in `cjwparquet/`
-4. `black cjwparquet tests && isort --recursive cjwparquet tests`
+4. `black cjwparquet tests && isort cjwparquet tests`
 5. Submit a pull request
 
 Be very, very, very careful to preserve a consistent API. Workbench will

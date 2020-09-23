@@ -1,3 +1,9 @@
+v2.0.0 - 2020-09-23
+-------------------
+
+* Depend on Arrow v1. Major version bump because output Arrow files aren't
+  always backwards-compatible.
+
 v1.0.2 - 2020-03-05
 -------------------
 

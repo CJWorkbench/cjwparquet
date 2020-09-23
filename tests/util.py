@@ -25,7 +25,8 @@ def tempfile_context(prefix=None, suffix=None, dir=None) -> ContextManager[Path]
 
 @contextlib.contextmanager
 def parquet_file(
-    table: Union[Dict[str, List[Any]], pyarrow.Table], dir: Optional[Path] = None,
+    table: Union[Dict[str, List[Any]], pyarrow.Table],
+    dir: Optional[Path] = None,
 ) -> ContextManager[Path]:
     """
     Yield a filename with `table` written to a Parquet file.
