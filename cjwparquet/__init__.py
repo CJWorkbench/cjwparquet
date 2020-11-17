@@ -10,8 +10,7 @@ import pyarrow.parquet
 
 
 def file_has_parquet_magic_number(path: Path) -> bool:
-    """
-    Detect Parquet.
+    """Detect Parquet.
 
     A Parquet file starts and ends with "PAR1" (ASCII-encoded).
     """
@@ -91,8 +90,7 @@ def are_files_equal(path1: Path, path2: Path) -> bool:
 
 
 def write(parquet_path: Path, table: pyarrow.Table) -> None:
-    """
-    Write an Arrow table to a Parquet file, overwriting if needed.
+    """Write an Arrow table to a Parquet file, overwriting if needed.
 
     We aim to keep the file format "stable": all future versions of
     parquet.read() should support all files written by today's version of this
@@ -137,8 +135,7 @@ def write(parquet_path: Path, table: pyarrow.Table) -> None:
 
 @contextlib.contextmanager
 def open_as_mmapped_arrow(parquet_path: Path) -> ContextManager[pyarrow.Table]:
-    """
-    Load `parquet_path` as a low-RAM (mmapped) pyarrow.Table.
+    """Load `parquet_path` as a low-RAM (mmapped) pyarrow.Table.
 
     Raise `pyarrow.ArrowIOError` on invalid input file.
 
@@ -161,8 +158,7 @@ def open_as_mmapped_arrow(parquet_path: Path) -> ContextManager[pyarrow.Table]:
 
 
 def read(parquet_path: Path) -> pyarrow.Table:
-    """
-    Return a pyarrow.Table, with its backing file deleted.
+    """Return a pyarrow.Table, with its backing file deleted.
 
     (Even though the file is deleted from the _filesystem_, the data is still
     on disk and mmapped until the return value goes out of scope.)
@@ -174,8 +170,7 @@ def read(parquet_path: Path) -> pyarrow.Table:
 def read_slice_as_text(
     parquet_path: Path, *, format: str, only_columns: range, only_rows: range
 ) -> str:
-    """
-    Format a slice of the Parquet file as CSV or JSON text.
+    """Format a slice of the Parquet file as CSV or JSON text.
 
     Ignore out-of-range rows and columns.
 
