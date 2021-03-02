@@ -12,7 +12,7 @@ needs_pytest = {"pytest", "test", "ptr"}.intersection(sys.argv)
 
 setup(
     name="cjwparquet",
-    version="2.1.0",
+    version="2.2.0",
     url="http://github.com/CJWorkbench/cjwparquet/",
     author="Adam Hooper",
     author_email="adam@adamhooper.com",
@@ -23,7 +23,7 @@ setup(
     license="MIT",
     zip_safe=True,
     packages=find_packages(exclude=["tests", "tests.*"]),
-    install_requires=["pyarrow>=1.0, <3.0"],
+    install_requires=["pyarrow>=1.0, <4.0"],
     setup_requires=["pytest-runner~=6.0"] if needs_pytest else [],
     extras_require={"tests": ["pytest~=6.0", "pytz"]},
 )
